@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+
+{% block title %}Login!{% endblock %}
+
+{% block body %}
+<h1 xmlns="http://www.w3.org/1999/html">Login Form</h1>
+<body class="text-center">
+<div class="container">
+  <form method="POST" class="form-register" style="color:white">
+    {{ form.hidden_tag() }}
+    <img class="mb-4" src="https://1.cms.s81c.com/sites/default/files/2019-03-21/Spark-Logo-Solo_280.png" alt="">
+    <h1 class="h3 mb-3 font-weight-normal">
+      Please sign in to your Account
+    </h1>
+    <br>
+    {{ form.email_address.label() }}
+    {{ form.email_address(class='form-control' , placeholder="Email") }}
+
+    {{ form.password.label() }}
+    {{ form.password(class='form-control' , placeholder="Password") }}
+    <br>
+    {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+    <div class="checkbox mb-3">
+      <h6>Do not have an account?</h6>
+      <a class="btn btn-sm btn-secondary" href="{{ url_for('register_page') }}">Signup</a>
+    </div>
+
+  </form>
+</div>
+
+</body>
+
+{% endblock %}
+
+{% block rawJS%}
+<script>
+    $('#login-tap').toggleClass('active')
+</script>
+{% endblock %}
